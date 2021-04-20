@@ -1,6 +1,15 @@
 body {
     font-family: sans-serif;
 }
+#seconds {
+  font-size: 5em;}
+
+#minutes {
+  font-size: 5em;
+}
+#colon {
+  font-size: 5em;
+}
 
 .main{
   position: absolute;
