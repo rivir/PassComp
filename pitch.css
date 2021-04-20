@@ -54,7 +54,14 @@ span{
   text-shadow: 1px 1px 1px black;
   color: lightgreen;
 }
-.etc button {
+.etc button,  {
+  text-shadow: 1px 1px 1px black;
+  color: lightblue;
+}
+
+.etc2 button {
+  width: 130px;
+  height: 130px;
   text-shadow: 1px 1px 1px black;
   color: lightblue;
 }
