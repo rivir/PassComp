@@ -179,4 +179,34 @@ window.onload = function () {
         button25.innerHTML = "GoalKicks+<br>" + count25;
         return false;
     };
+
+    var minutesLabel = document.getElementById("minutes");
+    var secondsLabel = document.getElementById("seconds");
+    var totalSeconds = 0;
+    setInterval(setTime, 1000);
+
+    function setTime() {
+        ++totalSeconds;
+        secondsLabel.innerHTML = pad(totalSeconds % 60);
+        minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+    }
+
+    function pad(val) {
+        if (!pause) {
+            var valString = val + "";
+            if (valString.length < 2) {
+                return "0" + valString;
+            } else {
+                return valString;
+            }
+        }
+    }
+
+    document.getElementById('pause').addEventListener('click', function () {
+        pause = true;
+    });
+
+    document.getElementById('resume').addEventListener('click', function () {
+        pause = false;
+    });
 }
