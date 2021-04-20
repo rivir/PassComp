@@ -21,6 +21,12 @@ body {
   position:absolute;
   top: 0; left: 0;
 }
+
+.pause .resume button{
+    width: 10px;
+  height: 30px;
+}
+
 button {
   width: 130px;
   height: 130px;
