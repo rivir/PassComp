@@ -180,7 +180,6 @@ window.onload = function () {
         return false;
     };
 
-
     var button26 = document.getElementById("shots-f"),
         count26 = 0;
     button26.onclick = function () {
