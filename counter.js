@@ -148,7 +148,7 @@ window.onload = function () {
         count23 = 0;
     button23.onclick = function () {
         count23 += 1;
-        button23.innerHTML = "Resetbr>" + count23;
+        button23.innerHTML = "Reset<br>" + count23;
     };
     button23.oncontextmenu = function () {
         count23 -= 1;
@@ -186,20 +186,20 @@ window.onload = function () {
     setInterval(setTime, 1000);
 
     function setTime() {
-        ++totalSeconds;
-        secondsLabel.innerHTML = pad(totalSeconds % 60);
-        minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+        if (!pause) {
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds % 60);
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+        }
     }
 
     function pad(val) {
-        if (!pause) {
             var valString = val + "";
             if (valString.length < 2) {
                 return "0" + valString;
             } else {
                 return valString;
             }
-        }
     }
 
     document.getElementById('pause').addEventListener('click', function () {
