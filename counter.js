@@ -118,4 +118,65 @@ window.onload = function () {
         button15.innerHTML = "Trans<br>" + count15;
         return false;
     };
+
+
+    var button21 = document.getElementById("throw-f"),
+        count21 = 0;
+    button21.onclick = function () {
+        count21 += 1;
+        button21.innerHTML = "Throws-<br>" + count21;
+    };
+    button21.oncontextmenu = function () {
+        count21 -= 1;
+        button21.innerHTML = "Throws-<br>" + count21;
+        return false;
+    };
+
+    var button22 = document.getElementById("throw-s"),
+        count22 = 0;
+    button22.onclick = function () {
+        count22 += 1;
+        button22.innerHTML = "Throws+<br>" + count22;
+    };
+    button22.oncontextmenu = function () {
+        count22 -= 1;
+        button22.innerHTML = "Throws+<br>" + count22;
+        return false;
+    };
+
+    var button23 = document.getElementById("reset"),
+        count23 = 0;
+    button23.onclick = function () {
+        count23 += 1;
+        button23.innerHTML = "Resetbr>" + count23;
+    };
+    button23.oncontextmenu = function () {
+        count23 -= 1;
+        button23.innerHTML = "Reset<br>" + count23;
+        return false;
+    };
+
+    var button24 = document.getElementById("gk-f"),
+        count24 = 0;
+    button24.onclick = function () {
+        count24 += 1;
+        button24.innerHTML = "GoalKicks-<br>" + count24;
+    };
+    button24.oncontextmenu = function () {
+        count24 -= 1;
+        button24.innerHTML = "GoalKicks-<br>" + count24;
+        return false;
+    };
+
+    var button25 = document.getElementById("gk-s"),
+        count25 = 0;
+    button25.onclick = function () {
+        count25 += 1;
+        button25.innerHTML = "GoalKicks+<br>" + count25;
+    };
+    button25.oncontextmenu = function () {
+        count25 -= 1;
+        button25.innerHTML = "GoalKicks+<br>" + count25;
+        return false;
+    };
 }
