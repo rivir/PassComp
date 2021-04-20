@@ -51,11 +51,11 @@ window.onload = function () {
         count5 = 0;
     button5.onclick = function () {
         count5 += 1;
-        button5.innerHTML = "Trans<br>" + count5;
+        button5.innerHTML = "Def 1/3<br>" + count5;
     };
     button5.oncontextmenu = function () {
         count5 -= 1;
-        button5.innerHTML = "Trans<br>" + count5;
+        button5.innerHTML = "Def 1/3<br>" + count5;
         return false;
     };
 
@@ -111,11 +111,11 @@ window.onload = function () {
         count15 = 0;
     button15.onclick = function () {
         count15 += 1;
-        button15.innerHTML = "Trans<br>" + count15;
+        button15.innerHTML = "Def 1/3<br>" + count15;
     };
     button15.oncontextmenu = function () {
         count15 -= 1;
-        button15.innerHTML = "Trans<br>" + count15;
+        button15.innerHTML = "Def 1/3<br>" + count15;
         return false;
     };
 
