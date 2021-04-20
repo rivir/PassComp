@@ -180,6 +180,31 @@ window.onload = function () {
         return false;
     };
 
+
+    var button26 = document.getElementById("shots-f"),
+        count26 = 0;
+    button26.onclick = function () {
+        count26 += 1;
+        button26.innerHTML = "Shots-<br>" + count26;
+    };
+    button26.oncontextmenu = function () {
+        count26 -= 1;
+        button26.innerHTML = "Shots-<br>" + count26;
+        return false;
+    };
+
+    var button27 = document.getElementById("shots-s"),
+        count27 = 0;
+    button27.onclick = function () {
+        count27 += 1;
+        button27.innerHTML = "Shots+<br>" + count27;
+    };
+    button27.oncontextmenu = function () {
+        count27 -= 1;
+        button27.innerHTML = "Shots+<br>" + count27;
+        return false;
+    };
+
     var minutesLabel = document.getElementById("minutes");
     var secondsLabel = document.getElementById("seconds");
     var totalSeconds = 0;
