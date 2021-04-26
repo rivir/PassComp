@@ -275,23 +275,15 @@ window.onload = function () {
             }
     }
 
-//    document.getElementById('pause').addEventListener('click', function () {
-//        pause = true;
-//    });
-
     var playbutton = document.getElementById("play");
-    //document.getElementById('resume').addEventListener('click', function () {
-     //   pause = false;
-     //   playbutton.innerHTML = '<i class="fa fa-pause"></i>'
-    //});
 
     document.getElementById('play').addEventListener("click", function () {
         if (pause) {
-            playbutton.innerHTML = '<i class="fa fa-pause"></i>'
+            playbutton.innerHTML = '<i class="fa fa-pause" style="position: relative;top: -3px;left: -2px;"></i>'
             pause = false;
         }
         else {
-            playbutton.innerHTML = '<i class="fa fa-play"></i>'
+            playbutton.innerHTML = '<i class="fa fa-play" style="position: relative;top: -3px;left: -2px;"></i>'
             pause = true;
         }
     });
