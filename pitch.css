@@ -43,6 +43,12 @@ button {
   color: red;
 }
 
+.play button {
+position: relative;
+    top: -3px;
+    left: -2px;
+}
+
 span{
     color: black;
   font-family: sans-serif;
