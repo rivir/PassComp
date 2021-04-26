@@ -285,7 +285,7 @@ window.onload = function () {
 
     var playbutton = document.getElementById()
 
-    function togglePlay() {
+    document.getElementById('play').addEventListener("click", function () {
         if (!pause) {
             playbutton.innerHTML = '<i class="fa fa-pause"></i>'
             pause = false;
@@ -294,7 +294,5 @@ window.onload = function () {
             playbutton.innerHTML = '<i class="fa fa-play"></i>'
             pause = true;
         }
-    };
-    
-    document.getElementById('play').addEventListener("click", togglePlay());
+    });
 }
