@@ -281,4 +281,17 @@ window.onload = function () {
     document.getElementById('resume').addEventListener('click', function () {
         pause = false;
     });
+
+    var playbutton = document.getElementById('play')
+    function togglePlay() {
+        if (playbutton.paused) {
+            playbutton.innerHTML = '<i class="fa fa-pause"></i>'
+            pause = false;
+        }
+        else {
+            playbutton.innerHTML = '<i class="fa fa-play"></i>'
+            pause = true;
+        }
+    };
+
 }
