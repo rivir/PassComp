@@ -204,6 +204,54 @@ window.onload = function () {
         return false;
     };
 
+    var button34 = document.getElementById("clear-f"),
+        count34 = 0;
+    button34.onclick = function () {
+        count34 += 1;
+        button34.innerHTML = "clear<br>" + count34;
+    };
+    button34.oncontextmenu = function () {
+        count34 -= 1;
+        button34.innerHTML = "clear<br>" + count34;
+        return false;
+    };
+
+    var button35 = document.getElementById("freekick"),
+        count35 = 0;
+    button35.onclick = function () {
+        count35 += 1;
+        button35.innerHTML = "free kicks<br>" + count35;
+    };
+    button35.oncontextmenu = function () {
+        count35 -= 1;
+        button35.innerHTML = "free kicks<br>" + count35;
+        return false;
+    };
+
+    var button36 = document.getElementById("1v1-f"),
+        count36 = 0;
+    button36.onclick = function () {
+        count36 += 1;
+        button36.innerHTML = "1v1-<br>" + count36;
+    };
+    button36.oncontextmenu = function () {
+        count36 -= 1;
+        button36.innerHTML = "1v1-<br>" + count36;
+        return false;
+    };
+
+    var button37 = document.getElementById("1v1-s"),
+        count37 = 0;
+    button37.onclick = function () {
+        count37 += 1;
+        button37.innerHTML = "1v1+<br>" + count37;
+    };
+    button37.oncontextmenu = function () {
+        count37 -= 1;
+        button37.innerHTML = "1v1+<br>" + count37;
+        return false;
+    };
+
     var minutesLabel = document.getElementById("minutes");
     var secondsLabel = document.getElementById("seconds");
     var totalSeconds = 0;
