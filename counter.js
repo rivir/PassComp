@@ -279,8 +279,10 @@ window.onload = function () {
 //        pause = true;
 //    });
 
+    var playbutton = document.getElementById("play"),
     document.getElementById('resume').addEventListener('click', function () {
         pause = false;
+        playbutton.innerHTML = '<i class="fa fa-play"></i>'
     });
 
     document.getElementById('play').addEventListener("click", function () {
