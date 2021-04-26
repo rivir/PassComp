@@ -252,7 +252,7 @@ window.onload = function () {
         return false;
     };
 
-    pause = true;
+    var pause = true;
     var minutesLabel = document.getElementById("minutes");
     var secondsLabel = document.getElementById("seconds");
     var totalSeconds = 0;
@@ -282,8 +282,6 @@ window.onload = function () {
     document.getElementById('resume').addEventListener('click', function () {
         pause = false;
     });
-
-    var playbutton = document.getElementById()
 
     document.getElementById('play').addEventListener("click", function () {
         if (!pause) {
