@@ -252,7 +252,7 @@ window.onload = function () {
         return false;
     };
 
-    //var pause = true;
+    pause=true;
     var minutesLabel = document.getElementById("minutes");
     var secondsLabel = document.getElementById("seconds");
     var totalSeconds = 0;
