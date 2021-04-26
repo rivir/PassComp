@@ -26,9 +26,6 @@ body {
   width: 30px;
   height: 30px;
   font-size: 8pt;
-  position: relative;
-    top: -3px;
-    left: -2px;
 }
 
 button {
