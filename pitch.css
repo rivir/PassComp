@@ -22,7 +22,7 @@ body {
   top: 0; left: 0;
 }
 
-#pause, #resume{
+#pause, #resume, #play{
   width: 30px;
   height: 30px;
   font-size: 8pt;
