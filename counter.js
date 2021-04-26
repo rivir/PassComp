@@ -283,7 +283,8 @@ window.onload = function () {
         pause = false;
     });
 
-    var playbutton = document.getElementById('play')
+    var playbutton = document.getElementById()
+
     function togglePlay() {
         if (!pause) {
             playbutton.innerHTML = '<i class="fa fa-pause"></i>'
@@ -294,5 +295,6 @@ window.onload = function () {
             pause = true;
         }
     };
-
+    
+    document.getElementById('play').addEventListener("click", togglePlay());
 }
