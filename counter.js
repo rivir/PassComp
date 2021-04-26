@@ -275,16 +275,16 @@ window.onload = function () {
             }
     }
 
-    document.getElementById('pause').addEventListener('click', function () {
-        pause = true;
-    });
+//    document.getElementById('pause').addEventListener('click', function () {
+//        pause = true;
+//    });
 
     document.getElementById('resume').addEventListener('click', function () {
         pause = false;
     });
 
     document.getElementById('play').addEventListener("click", function () {
-        if (!pause) {
+        if (pause) {
             playbutton.innerHTML = '<i class="fa fa-pause"></i>'
             pause = false;
         }
