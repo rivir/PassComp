@@ -282,7 +282,7 @@ window.onload = function () {
     var playbutton = document.getElementById("play");
     document.getElementById('resume').addEventListener('click', function () {
         pause = false;
-        playbutton.innerHTML = '<i class="fa fa-play"></i>'
+        playbutton.innerHTML = '<i class="fa fa-pause"></i>'
     });
 
     document.getElementById('play').addEventListener("click", function () {
