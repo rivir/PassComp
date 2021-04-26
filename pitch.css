@@ -54,7 +54,7 @@ span{
   text-shadow: 1px 1px 1px black;
   color: lightgreen;
 }
-.etc button,  {
+.etc button  {
   text-shadow: 1px 1px 1px black;
   color: lightblue;
 }
@@ -135,8 +135,10 @@ span{
 }
 
 .right .penalty-area{
-    right: 38px;
+    right: 40px;
     border-right: 0;
+    top: 240px;
+    left: 980px;
 }
 
 .penalty-area:before{
