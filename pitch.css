@@ -26,6 +26,9 @@ body {
   width: 30px;
   height: 30px;
   font-size: 8pt;
+  position: relative;
+    top: -3px;
+    left: -2px;
 }
 
 button {
@@ -41,12 +44,6 @@ button {
 .fail button {
   text-shadow: 1px 1px 1px black;
   color: red;
-}
-
-.play button {
-position: relative;
-    top: -3px;
-    left: -2px;
 }
 
 span{
