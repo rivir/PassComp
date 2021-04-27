@@ -74,7 +74,7 @@ window.onload = function () {
     });
 
     document.getElementById('save').addEventListener("click", function () {
-        var table = $('#table');
+        //var table = document.getElementById('table')
         var str = '<table id="table">';
 
         PassArray.forEach(function (d) {
