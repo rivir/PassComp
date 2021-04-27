@@ -95,12 +95,13 @@ window.onload = function () {
 
         str += '</table >';
         alert(str);
+        
     });
 
     
 
     document.getElementById('export').addEventListener("click", function () {
-        
+        alert(PassArray.join("\n"));
     });
     
 
