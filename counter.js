@@ -115,7 +115,7 @@ window.onload = function () {
     
     function copyToClipboard(array) {
         PassArrayConsole = totalSeconds.toString() + "," + JSON.parse(JSON.stringify(array));
-        csv = PassArrayConsole.replace(',', '\t');
+        csv = PassArrayConsole.replace(/,/g, '\t');
         csv += '\n';
         FullPassArray.push(PassArrayConsole)
         console.table(FullPassArray);
