@@ -204,7 +204,7 @@ window.onload = function () {
         return false;
     };
 
-    var button34 = document.getElementById("clear-f"),
+ /*   var button34 = document.getElementById("clear-f"),
         count34 = 0;
     button34.onclick = function () {
         count34 += 1;
@@ -228,7 +228,7 @@ window.onload = function () {
         return false;
     };
 
- /*   var button36 = document.getElementById("1v1-f"),
+    var button36 = document.getElementById("1v1-f"),
         count36 = 0;
     button36.onclick = function () {
         count36 += 1;
@@ -255,12 +255,14 @@ window.onload = function () {
     PassArray = new Array();
     //PassArray[37] = 0;
 
+    ButtonProcess("clear-f", "clear<br>", 34);
+    ButtonProcess("freekick", "free kicks<br>", 35);
     ButtonProcess("1v1-f", "1v1-<br>", 36);
-    ButtonProcess("1v1-s", "1v1+<br>", 37);    
+    ButtonProcess("1v1-s", "1v1+<br>", 37);
 
     function ButtonProcess(elementname, buttonname, index) {
         var buttonx = document.getElementById(elementname);
-        PassArray[index] = (typeof PassArray[index] === undefined) ? 0 : x;
+        PassArray[index] = (typeof PassArray[index] === undefined) ? 0 : PassArray[index];
 
         buttonx.onclick = function () {
             PassArray[index] += 1;
