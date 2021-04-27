@@ -117,6 +117,7 @@ window.onload = function () {
             }
             if (row + 1 < array.length) csv += '\n';
         }
+        console.table(csv);
         copyTextToClipboard(csv);
     }
 
@@ -150,7 +151,7 @@ window.onload = function () {
             return;
         }
         navigator.clipboard.writeText(text).then(function () {
-            // console.log('Async: Copying to clipboard was successful!');
+            console.log('Async: Copying to clipboard was successful!');
         }, function (err) {
             console.error('Async: Could not copy text: ', err);
         });
