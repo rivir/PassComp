@@ -73,7 +73,7 @@ window.onload = function () {
         }
     });
 
-    var FullPassArray = [];
+    var FullPassArray = [], csv = '';
 
     document.getElementById('save').addEventListener("click", function () {
         PassArrayConsole = totalSeconds.toString()+","+JSON.parse(JSON.stringify(PassArray));
