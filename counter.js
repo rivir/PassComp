@@ -105,7 +105,7 @@ window.onload = function () {
 
     document.getElementById('export').addEventListener("click", function () {
         PassArrayConsole = totalSeconds.toString() + "," + JSON.parse(JSON.stringify(PassArray));
-        copy2DToClipboard(PassArra);
+        copy2DToClipboard(PassArray);
     });
     
     function copy2DToClipboard(array) {
