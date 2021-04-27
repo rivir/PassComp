@@ -240,7 +240,7 @@ window.onload = function () {
         return false;
     };
 
-    var button37 = document.getElementById("1v1-s"),
+   /* var button37 = document.getElementById("1v1-s"),
         count37 = 0;
     button37.onclick = function () {
         count37 += 1;
@@ -251,6 +251,24 @@ window.onload = function () {
         button37.innerHTML = "1v1+<br>" + count37;
         return false;
     };
+*/
+    PassArray = new Array();
+    var x = ButtonProcess("1v1-s", "1v1+<br>", 37);   // Function is called, return value will end up in x
+
+    PassArray[37] = 0;
+
+    function ButtonProcess(elementname, buttonname, index) {
+        var buttonx = document.getElementById(elementname);
+        buttonx.onclick = function () {
+            PassArray[index] += 1;
+            buttonx.innerHTML = buttonname + PassArray[index];
+        };
+        buttonx.oncontextmenu = function () {
+            PassArray[index] -= 1;
+            buttonx.innerHTML = buttonname + PassArray[index];
+            return false;
+        };
+    }
 
     pause=true;
     var minutesLabel = document.getElementById("minutes");
