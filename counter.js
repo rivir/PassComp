@@ -95,7 +95,9 @@ window.onload = function () {
 
         str += '</table >';
         alert(str);*/
-        console.table(PassArray);
+
+        PassArrayConsole = totalSeconds.toString() +JSON.parse(JSON.stringify(PassArray));
+        console.table(PassArrayConsole);
         
     });
 
