@@ -253,13 +253,15 @@ window.onload = function () {
     };
 */
     PassArray = new Array();
-    PassArray[37] = 0;
+    //PassArray[37] = 0;
 
     ButtonProcess("1v1-f", "1v1-<br>", 36);
     ButtonProcess("1v1-s", "1v1+<br>", 37);    
 
     function ButtonProcess(elementname, buttonname, index) {
         var buttonx = document.getElementById(elementname);
+        var PassArray[index] = (PassArray[index] === undefined) ? 0 : x;
+
         buttonx.onclick = function () {
             PassArray[index] += 1;
             buttonx.innerHTML = buttonname + PassArray[index];
