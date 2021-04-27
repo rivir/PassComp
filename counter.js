@@ -73,6 +73,8 @@ window.onload = function () {
         }
     });
 
+    var FullPassArray = [];
+
     document.getElementById('save').addEventListener("click", function () {
         //var table = document.getElementById('table')
         /*var str = '<table id="table">';
@@ -98,6 +100,8 @@ window.onload = function () {
 
         PassArrayConsole = totalSeconds.toString()+","+JSON.parse(JSON.stringify(PassArray));
         console.table(PassArrayConsole);
+
+        FullPassArray.push(PassArrayConsole)
         
     });
 
@@ -105,9 +109,19 @@ window.onload = function () {
 
     document.getElementById('export').addEventListener("click", function () {
         PassArrayConsole = totalSeconds.toString() + "," + JSON.parse(JSON.stringify(PassArray));
-        copy2DToClipboard(PassArray);
+        //copy2DToClipboard(PassArray);
+        copyToClipboard(PassArray);
     });
     
+    function copyToClipboard(array) {
+        PassArrayConsole = totalSeconds.toString() + "," + JSON.parse(JSON.stringify(array));
+        csv = PassArrayConsole.replace(',', '\t');
+
+        FullPassArray.push(PassArrayConsole)
+        console.table(FullPassArray);
+        copyTextToClipboard(FullPassArray);
+    }
+
     function copy2DToClipboard(array) {
         var csv = '', row, cell;
         for (row = 0; row < array.length; row++) {
