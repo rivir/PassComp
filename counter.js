@@ -74,6 +74,7 @@ window.onload = function () {
     });
 
     var FullPassArray = [], csv = '';
+    csv = "seconds\tOff 1/3-\tOff Trans-\tMid 1/3-\tDef Trans-\tDef 1/3-\tOff 1/3+\tOff Trans+\tMid 1/3+\tTrans+\tDef 1/3+\tThrows-\tThrows+\tReset\tGoalKicks-\tGoalKicks+\tShots-\tShots+\tclear\tfree kicks\t1v1-\t1v1\n"
 
     document.getElementById('save').addEventListener("click", function () {
         PassArrayConsole = totalSeconds.toString()+","+JSON.parse(JSON.stringify(PassArray));
