@@ -96,7 +96,7 @@ window.onload = function () {
         str += '</table >';
         alert(str);*/
 
-        PassArrayConsole = totalSeconds.toString() +JSON.parse(JSON.stringify(PassArray));
+        PassArrayConsole = totalSeconds.toString()+","+JSON.parse(JSON.stringify(PassArray));
         console.table(PassArrayConsole);
         
     });
@@ -104,8 +104,56 @@ window.onload = function () {
     
 
     document.getElementById('export').addEventListener("click", function () {
-        alert(PassArray.join("\n"));
+        PassArrayConsole = totalSeconds.toString() + "," + JSON.parse(JSON.stringify(PassArray));
+        copy2DToClipboard(PassArra);
     });
     
+    function copy2DToClipboard(array) {
+        var csv = '', row, cell;
+        for (row = 0; row < array.length; row++) {
+            for (cell = 0; cell < array[row].length; cell++) {
+                csv += (array[row][cell] + '').replace(/[\n\t]+/g, ' ');
+                if (cell + 1 < array[row].length) csv += '\t';
+            }
+            if (row + 1 < array.length) csv += '\n';
+        }
+        copyTextToClipboard(csv);
+    }
+
+    function fallbackCopyTextToClipboard(text) {
+        var textArea = document.createElement("textarea");
+        textArea.value = text;
+
+        // Avoid scrolling to bottom
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'successful' : 'unsuccessful';
+            // console.log('Fallback: Copying text command was ' + msg);
+        } catch (err) {
+            console.error('Fallback: Oops, unable to copy', err);
+        }
+
+        document.body.removeChild(textArea);
+    }
+
+    function copyTextToClipboard(text) {
+        if (!navigator.clipboard) {
+            fallbackCopyTextToClipboard(text);
+            return;
+        }
+        navigator.clipboard.writeText(text).then(function () {
+            // console.log('Async: Copying to clipboard was successful!');
+        }, function (err) {
+            console.error('Async: Could not copy text: ', err);
+        });
+    }
 
 }
