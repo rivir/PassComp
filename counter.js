@@ -75,7 +75,7 @@ window.onload = function () {
 
     document.getElementById('save').addEventListener("click", function () {
         //var table = document.getElementById('table')
-        var str = '<table id="table">';
+        /*var str = '<table id="table">';
 
         PassArray.forEach(function (d) {
             str += JSON.stringify(d);
@@ -94,7 +94,8 @@ window.onload = function () {
         }
 
         str += '</table >';
-        alert(str);
+        alert(str);*/
+        console.table(PassArray);
         
     });
 
