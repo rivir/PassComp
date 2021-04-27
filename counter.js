@@ -72,4 +72,20 @@ window.onload = function () {
             pause = true;
         }
     });
+
+    document.getElementById('save').addEventListener("click", function () {
+        var str = "";
+
+        PassArray.forEach(function (d) {
+            str += JSON.stringify(d);
+        });
+
+        alert(str);
+    });
+
+    document.getElementById('export').addEventListener("click", function () {
+        
+    });
+    
+
 }
