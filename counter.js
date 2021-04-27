@@ -74,14 +74,30 @@ window.onload = function () {
     });
 
     document.getElementById('save').addEventListener("click", function () {
-        var str = "";
+        var table = $('#table');
+        var str = '<table id="table">';
 
         PassArray.forEach(function (d) {
             str += JSON.stringify(d);
         });
 
+        for (var i = 0; i < PassArray.length; i++) {
+            if (i == 0) {
+                table.append('<tr>');
+            }
+            for (var j = 0; j < PassArray[i].length; j++) {
+                table.append('<td>' + PassArray[i][j] + '</td>');
+                if (j === PassArray[0].length - 1) {
+                    table.append('</tr');
+                }
+            }
+        }
+
+        str += '</table >';
         alert(str);
     });
+
+    
 
     document.getElementById('export').addEventListener("click", function () {
         
