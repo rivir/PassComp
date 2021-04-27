@@ -76,62 +76,22 @@ window.onload = function () {
     var FullPassArray = [];
 
     document.getElementById('save').addEventListener("click", function () {
-        //var table = document.getElementById('table')
-        /*var str = '<table id="table">';
-
-        PassArray.forEach(function (d) {
-            str += JSON.stringify(d);
-        });
-
-        for (var i = 0; i < PassArray.length; i++) {
-            if (i == 0) {
-                table.append('<tr>');
-            }
-            for (var j = 0; j < PassArray[i].length; j++) {
-                table.append('<td>' + PassArray[i][j] + '</td>');
-                if (j === PassArray[0].length - 1) {
-                    table.append('</tr');
-                }
-            }
-        }
-
-        str += '</table >';
-        alert(str);*/
-
         PassArrayConsole = totalSeconds.toString()+","+JSON.parse(JSON.stringify(PassArray));
-        console.table(PassArrayConsole);
-
         FullPassArray.push(PassArrayConsole)
-        
+        console.table(FullPassArray);
     });
 
-    
-
     document.getElementById('export').addEventListener("click", function () {
-        PassArrayConsole = totalSeconds.toString() + "," + JSON.parse(JSON.stringify(PassArray));
-        //copy2DToClipboard(PassArray);
         copyToClipboard(PassArray);
     });
     
     function copyToClipboard(array) {
         PassArrayConsole = totalSeconds.toString() + "," + JSON.parse(JSON.stringify(array));
-        csv = PassArrayConsole.replace(/,/g, '\t');
-        csv += '\n';
         FullPassArray.push(PassArrayConsole)
+        csv = FullPassArray.replace(/,/g, '\t');
+        csv += '\n';
+        //FullPassArray.push(PassArrayConsole)
         console.table(FullPassArray);
-        copyTextToClipboard(csv);
-    }
-
-    function copy2DToClipboard(array) {
-        var csv = '', row, cell;
-        for (row = 0; row < array.length; row++) {
-            for (cell = 0; cell < array[row].length; cell++) {
-                csv += (array[row][cell] + '').replace(/[\n\t]+/g, ' ');
-                if (cell + 1 < array[row].length) csv += '\t';
-            }
-            if (row + 1 < array.length) csv += '\n';
-        }
-        console.table(csv);
         copyTextToClipboard(csv);
     }
 
@@ -165,7 +125,7 @@ window.onload = function () {
             return;
         }
         navigator.clipboard.writeText(text).then(function () {
-            console.log('Async: Copying to clipboard was successful!');
+           // console.log('Async: Copying to clipboard was successful!');
         }, function (err) {
             console.error('Async: Could not copy text: ', err);
         });
