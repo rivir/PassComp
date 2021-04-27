@@ -260,7 +260,7 @@ window.onload = function () {
 
     function ButtonProcess(elementname, buttonname, index) {
         var buttonx = document.getElementById(elementname);
-        var PassArray[index] = (PassArray[index] === undefined) ? 0 : x;
+        PassArray[index] = (PassArray[index] === undefined) ? 0 : x;
 
         buttonx.onclick = function () {
             PassArray[index] += 1;
