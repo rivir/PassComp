@@ -228,7 +228,7 @@ window.onload = function () {
         return false;
     };
 
-    var button36 = document.getElementById("1v1-f"),
+ /*   var button36 = document.getElementById("1v1-f"),
         count36 = 0;
     button36.onclick = function () {
         count36 += 1;
@@ -240,7 +240,7 @@ window.onload = function () {
         return false;
     };
 
-   /* var button37 = document.getElementById("1v1-s"),
+    var button37 = document.getElementById("1v1-s"),
         count37 = 0;
     button37.onclick = function () {
         count37 += 1;
@@ -253,9 +253,10 @@ window.onload = function () {
     };
 */
     PassArray = new Array();
-    var x = ButtonProcess("1v1-s", "1v1+<br>", 37);   // Function is called, return value will end up in x
-
     PassArray[37] = 0;
+
+    ButtonProcess("1v1-f", "1v1-<br>", 36);
+    ButtonProcess("1v1-s", "1v1+<br>", 37);    
 
     function ButtonProcess(elementname, buttonname, index) {
         var buttonx = document.getElementById(elementname);
