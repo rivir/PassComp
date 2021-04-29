@@ -66,10 +66,12 @@ window.onload = function () {
         if (pause) {
             playbutton.innerHTML = '<i class="fa fa-pause" style="position: relative;top: -3px;left: -2px;"></i>'
             pause = false;
+            //player.playVideo();
         }
         else {
             playbutton.innerHTML = '<i class="fa fa-play" style="position: relative;top: -3px;left: -2px;"></i>'
             pause = true;
+            //player.pauseVideo(); Youtube integration
         }
     });
 
