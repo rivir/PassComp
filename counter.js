@@ -1,3 +1,7 @@
+//add Youtube integration
+//add timeline sync
+//add hotkeys
+
 window.onload = function () {
     PassArray = new Array();
     ButtonProcess("offense-f", "Off 1/3<br>", 0);
