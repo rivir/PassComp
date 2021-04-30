@@ -3,6 +3,10 @@ body {
   padding: 20px;
   font-family: Helvetica;
 }
+ 
+.__content {
+        display: flex;
+}
 
 .__left {
     position: relative;
