@@ -9,7 +9,7 @@ body {
         height: calc(100vh - 46px);
 }
 
-.__left iframe {
+.__left #player {
     position: absolute; 
     top: 0; 
     left: 0; 
