@@ -3,7 +3,23 @@ body {
   padding: 20px;
   font-family: Helvetica;
 }
- 
+
+.__wrapper {
+    overflow: hidden;
+    line-height: 0;
+    height: 100%;
+}
+
+.__cropping {
+    overflow: hidden;
+}
+
+.__to_crop {
+    overflow: hidden;
+    margin-top: -51%;
+    margin-bottom: -20%;
+}
+
 .__content {
         display: flex;
         height: calc(100vh - 46px);
