@@ -15,6 +15,9 @@ body {
     flex-direction: column;
 }
 .__right {
+    width: 352px;
+    overflow-x: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
