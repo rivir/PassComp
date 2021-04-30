@@ -47,20 +47,23 @@ body {
 button {
   background: #0084ff;
   border: none;
-  border-radius: 5px;
-  padding: 8px 14px;
-  font-size: 15px;
+  border-radius: 9px;
+  /*padding: 8px 14px;
+  font-size: 15px;*/
   color: #fff;
 }
 
-#banner-message.alt {
-  background: #0084ff;
-  color: #fff;
-  margin-top: 40px;
-  width: 200px;
+.fail button {
+  color: red;
 }
 
-#banner-message.alt button {
-  background: #fff;
-  color: #000;
+.success button {
+  color: lightgreen;
+}
+.etc button  {
+  color: lightblue;
+}
+
+.etc2 button {
+  color: lightblue;
 }
