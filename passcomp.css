@@ -8,6 +8,10 @@ body {
         display: flex;
 }
 
+.__video {
+    
+}
+
 .__left {
     position: relative;
     display: flex;
