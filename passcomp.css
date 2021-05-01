@@ -67,6 +67,11 @@ body {
   cursor: pointer;
 }
 
+.__content {
+        display: flex;
+        height: calc(100vh - 46px);
+}
+
 .__left {
     /*position: relative;
     display: flex;
