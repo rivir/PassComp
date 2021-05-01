@@ -5,7 +5,7 @@ function labnolIframe(div) {
         "https://www.youtube.com/embed/" + div.dataset.id + "?autoplay=1&rel=0"
     );
     iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("allowfullscreen", "1");
+    iframe.setAttribute("enablejsapi", "1");
     iframe.setAttribute("origin", "https://rivir.github.io");
     iframe.setAttribute(
         "allow",
