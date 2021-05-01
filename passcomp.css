@@ -20,6 +20,13 @@ body {
     margin-bottom: -20%;
 }
 
+.VideoBeforePlayOverlay, .VideoBeforePlayOverlay__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
 .__content {
         display: flex;
         height: calc(100vh - 46px);
