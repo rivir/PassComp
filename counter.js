@@ -70,8 +70,6 @@ window.onload = function () {
         if (pause) {
             playbutton.innerHTML = '<i class="fa fa-pause"></i>'
             pause = false;
-            var playerElements = document.getElementsByClassName("youtube-player");
-            playerElements.playVideo();
         }
         else {
             playbutton.innerHTML = '<i class="fa fa-play"></i>'

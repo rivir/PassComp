@@ -17,7 +17,7 @@ function labnolIframe(div) {
 function initYouTubeVideos() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    
+
     var playerElements = document.getElementsByClassName("youtube-player");
     for (var n = 0; n < playerElements.length; n++) {
         //var videoId = playerElements[n].dataset.id;
@@ -41,3 +41,14 @@ function initYouTubeVideos() {
 }
 
 document.addEventListener("DOMContentLoaded", initYouTubeVideos);
+
+var playbutton = document.getElementById("play");
+
+document.getElementById('play').addEventListener("click", function () {
+    if (pause) {
+        player.playVideo();
+    }
+    else {
+        player.pauseVideo();
+    }
+});
