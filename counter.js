@@ -134,10 +134,12 @@ window.onload = function () {
     }
 
     function callPlayer(func, args) {
+        console.log('CallPlayer func:' + func + " args:" + args);
         var iframes = document.getElementsByTagName('iframe');
         for (var i = 0; i < iframes.length; ++i) {
             if (iframes[i]) {
                 var src = iframes[i].getAttribute('src');
+                console.log('CallPlayer src:' + src);
                 if (src) {
                     if (src.indexOf('youtube.com/embed') != -1) {
                         iframes[i].contentWindow.postMessage(JSON.stringify({
