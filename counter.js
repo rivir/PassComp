@@ -68,12 +68,13 @@ window.onload = function () {
 
     document.getElementById('play').addEventListener("click", function () {
         if (pause) {
-            playbutton.innerHTML = '<i class="fa fa-pause" style="position: relative;top: -3px;left: -2px;"></i>'
+            playbutton.innerHTML = '<i class="fa fa-pause"></i>'
             pause = false;
-            //player.playVideo();
+            var playerElements = document.getElementsByClassName("youtube-player");
+            playerElements.playVideo();
         }
         else {
-            playbutton.innerHTML = '<i class="fa fa-play" style="position: relative;top: -3px;left: -2px;"></i>'
+            playbutton.innerHTML = '<i class="fa fa-play"></i>'
             pause = true;
             //player.pauseVideo(); Youtube integration
         }
