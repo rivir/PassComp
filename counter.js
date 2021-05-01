@@ -65,22 +65,18 @@ window.onload = function () {
     }
 
     var playbutton = document.getElementById("play");
-
+    var yt = document.getElementById("youtube-player");
     document.getElementById('play').addEventListener("click", function () {
         if (pause) {
             playbutton.innerHTML = '<i class="fa fa-pause"></i>'
             pause = false;
-            $('.youtube-player').each(function () {
-                $(this).playVideo();
-            });
+            yt.playVideo();
         }
         else {
             playbutton.innerHTML = '<i class="fa fa-play"></i>'
             pause = true;
             pause();
-            $('.youtube-player').each(function () {
-                $(this).pauseVideo();
-            });
+            yt.pauseVideo();
             //player.pauseVideo(); Youtube integration
         }
     });
