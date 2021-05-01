@@ -70,12 +70,17 @@ window.onload = function () {
         if (pause) {
             playbutton.innerHTML = '<i class="fa fa-pause"></i>'
             pause = false;
-            play();
+            $('.youtube-player').each(function () {
+                $(this).playVideo();
+            });
         }
         else {
             playbutton.innerHTML = '<i class="fa fa-play"></i>'
             pause = true;
             pause();
+            $('.youtube-player').each(function () {
+                $(this).pauseVideo();
+            });
             //player.pauseVideo(); Youtube integration
         }
     });

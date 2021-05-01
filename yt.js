@@ -41,14 +41,3 @@ function initYouTubeVideos() {
 }
 
 document.addEventListener("DOMContentLoaded", initYouTubeVideos);
-
-var playbutton = document.getElementById("play");
-
-document.getElementById('play').addEventListener("click", function () {
-    if (pause) {
-        player.playVideo();
-    }
-    else {
-        player.pauseVideo();
-    }
-});
