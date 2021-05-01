@@ -65,7 +65,8 @@ window.onload = function () {
     }
 
     var playbutton = document.getElementById("play");
-    var yt = document.getElementById("youtube-player");
+    //var yt = document.getElementById("youtube-player");
+    var yt = document.getElementById("player");
     document.getElementById('play').addEventListener("click", function () {
         if (pause) {
             playbutton.innerHTML = '<i class="fa fa-pause"></i>'
