@@ -126,3 +126,13 @@ button {
   font-size: 8pt;
   color: white;
 }
+
+#seconds {
+  font-size: 5em;}
+
+#minutes {
+  font-size: 5em;
+}
+#colon {
+  font-size: 5em;
+}
