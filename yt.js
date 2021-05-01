@@ -2,10 +2,9 @@ function labnolIframe(div) {
     var iframe = document.createElement("iframe");
     iframe.setAttribute(
         "src",
-        "https://www.youtube.com/embed/" + div.dataset.id + "?autoplay=1&rel=0"
+        "https://www.youtube.com/embed/" + div.dataset.id + "?enablejsapi=1&autoplay=1&rel=0"
     );
     iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("enablejsapi", "1");
     iframe.setAttribute("origin", "https://rivir.github.io");
     iframe.setAttribute(
         "allow",
