@@ -119,3 +119,10 @@ button {
 .etc2 button {
   color: lightblue;
 }
+
+#save, #export, #play{
+  width: 30px;
+  height: 30px;
+  font-size: 8pt;
+  color: white;
+}
