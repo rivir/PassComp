@@ -77,10 +77,8 @@ body {
     height: 0; */
 position: relative;
     display: flex;
-    width: calc(100% - 352px);
     flex-direction: column;
     width: calc(100% - 352px);
-    height: 0;
     /*max-width: 800px;
     margin: 30px auto 20px;*/
 }
