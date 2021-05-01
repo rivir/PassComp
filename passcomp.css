@@ -76,9 +76,9 @@ body {
     padding-top:30px;
     height: 0; */
 
-    width: 100%;
-    max-width: 800px;
-    margin: 30px auto 20px;
+    width: calc(100% - 352px);
+    /*max-width: 800px;
+    margin: 30px auto 20px;*/
 }
 
 .__right {
