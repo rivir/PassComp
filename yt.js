@@ -59,3 +59,13 @@ function callPlayer(func, args) {
         }
     }
 }
+
+var playbutton = document.getElementById("play");
+document.getElementById('play').addEventListener("click", function () {
+    if (pause) {
+        callPlayer("playVideo")
+    }
+    else {
+        callPlayer("pauseVideo")
+    }
+});
