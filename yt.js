@@ -17,7 +17,8 @@ function labnolIframe(div) {
 function initYouTubeVideos() {
     var playerElements = document.getElementsByClassName("youtube-player");
     for (var n = 0; n < playerElements.length; n++) {
-        var videoId = playerElements[n].dataset.id;
+        //var videoId = playerElements[n].dataset.id;
+        var videoId = urlParams.get('v')
         var div = document.createElement("div");
         div.setAttribute("data-id", videoId);
         var thumbNode = document.createElement("img");
