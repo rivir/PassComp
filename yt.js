@@ -15,6 +15,7 @@ function labnolIframe(div) {
 }
 
 function initYouTubeVideos() {
+    const urlParams = new URLSearchParams(queryString);
     var playerElements = document.getElementsByClassName("youtube-player");
     for (var n = 0; n < playerElements.length; n++) {
         //var videoId = playerElements[n].dataset.id;
