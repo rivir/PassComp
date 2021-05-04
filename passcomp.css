@@ -103,6 +103,8 @@ button {
   /*padding: 8px 14px;
   font-size: 15px;*/
   color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 .fail button {
