@@ -48,6 +48,17 @@ window.onload = function () {
         });
     }
 
+    function doc_keyUp(e) {
+        if (e.key === 81) {
+            var buttonx = document.getElementById(elementname);
+            PassArray[index] = (PassArray[index] === undefined) ? 0 : PassArray[index];
+            PassArray[index] += 1;
+            buttonx.innerHTML = buttonname + PassArray[index];
+        }
+    }
+
+    document.addEventListener('keyup', doc_keyUp, false);
+
     pause=true;
     var minutesLabel = document.getElementById("minutes");
     var secondsLabel = document.getElementById("seconds");
