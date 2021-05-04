@@ -130,11 +130,16 @@ button {
 
 
 #seconds {
-  font-size: 3em;}
+  font-size: 3em;
+  right: 20px;
+  color: darkmagenta;
+}
 
 #minutes {
   font-size: 3em;
+  color: darkmagenta;
 }
 #colon {
   font-size: 3em;
+  color: darkmagenta;
 }
