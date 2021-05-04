@@ -69,7 +69,7 @@ window.onload = function () {
                 PassArray[j] += 1;
                 buttonx.innerHTML = buttonname + PassArray[j];
            }
-            else if (e.key == " ") {
+            else if (e.key == "x") {
                 if (pause) {
                     playbutton.innerHTML = '<i class="fa fa-pause"></i>'
                     pause = false;
