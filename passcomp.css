@@ -142,4 +142,6 @@ button {
 #colon {
   font-size: 3em;
   color: darkmagenta;
+  margin-right: -5px;
+  margin-left: -5px;
 }
