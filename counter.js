@@ -50,7 +50,7 @@ window.onload = function () {
 
     document.addEventListener("keyup", function (e) {
         console.log(e);
-        if (e.key == 81) {
+        if (e.key == "q") {
             //("offense-f", "Off 1/3<br>", 0, 81);
             elementname = "offense-f"
             buttonname = "Off 1/3<br>"
