@@ -4,16 +4,16 @@
 
 window.onload = function () {
     PassArray = new Array();
-    ButtonProcess("offense-f", "Off 1/3<br>", 0, 81);
-    ButtonProcess("offtrans-f", "Trans<br>", 1, 87);
-    ButtonProcess("middle-f", "Mid 1/3<br>", 2, 69);
-    ButtonProcess("deftrans-f", "Trans<br>", 3);
-    ButtonProcess("defense-f", "Def 1/3<br>", 4);
-    ButtonProcess("offense-s", "Off 1/3<br>", 5);
-    ButtonProcess("offtrans-s", "Trans<br>", 6);
-    ButtonProcess("middle-s", "Mid 1/3<br>", 7);
-    ButtonProcess("deftrans-s", "Trans<br>", 8);
-    ButtonProcess("defense-s", "Def 1/3<br>", 9);
+    ButtonProcess("offense-f", "Off 1/3<br>", 0, "q");
+    ButtonProcess("offtrans-f", "Trans<br>", 1, "w");
+    ButtonProcess("middle-f", "Mid 1/3<br>", 2, "e");
+    ButtonProcess("deftrans-f", "Trans<br>", 3, "r");
+    ButtonProcess("defense-f", "Def 1/3<br>", 4, "t");
+    ButtonProcess("offense-s", "Off 1/3<br>", 5, "a");
+    ButtonProcess("offtrans-s", "Trans<br>", 6, "s");
+    ButtonProcess("middle-s", "Mid 1/3<br>", 7, "d");
+    ButtonProcess("deftrans-s", "Trans<br>", 8, "f");
+    ButtonProcess("defense-s", "Def 1/3<br>", 9, "g");
     ButtonProcess("throw-f", "Throws-<br>", 10);
     ButtonProcess("throw-s", "Throws+<br>", 11);
     ButtonProcess("reset", "Reset<br>", 12);
@@ -34,34 +34,21 @@ window.onload = function () {
             PassArray[index] += 1;
             buttonx.innerHTML = buttonname + PassArray[index];
         };
+
         buttonx.oncontextmenu = function () {
             PassArray[index] -= 1;
             buttonx.innerHTML = buttonname + PassArray[index];
             return false;
         };
 
-        buttonx.addEventListener("keyup", function (event) {
-            if (event.which == keypress) {
-                //event.preventDefault();
-                buttonx.click();
+        document.addEventListener("keyup", function (e) {
+            console.log(e);
+            if (e.key == keypress) {
+                PassArray[index] += 1;
+                buttonx.innerHTML = buttonname + PassArray[index];
             }
         });
-    }
-
-    document.addEventListener("keyup", function (e) {
-        console.log(e);
-        if (e.key == "q") {
-            //("offense-f", "Off 1/3<br>", 0, 81);
-            elementname = "offense-f"
-            buttonname = "Off 1/3<br>"
-            index = 0
-
-            var buttonx = document.getElementById(elementname);
-            PassArray[index] = (PassArray[index] === undefined) ? 0 : PassArray[index];
-            PassArray[index] += 1;
-            buttonx.innerHTML = buttonname + PassArray[index];
-        }
-    });
+    }    
 
     pause=true;
     var minutesLabel = document.getElementById("minutes");
