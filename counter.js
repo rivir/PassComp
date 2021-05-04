@@ -48,20 +48,6 @@ window.onload = function () {
         });
     }
 
-    function doc_keyUp(e) {
-        if (e.key == 81) {
-            //("offense-f", "Off 1/3<br>", 0, 81);
-            elementname = "offense-f"
-            buttonname = "Off 1/3<br>"
-            index = 0
-
-            var buttonx = document.getElementById(elementname);
-            PassArray[index] = (PassArray[index] === undefined) ? 0 : PassArray[index];
-            PassArray[index] += 1;
-            buttonx.innerHTML = buttonname + PassArray[index];
-        }
-    }
-
     document.addEventListener("keyup", function (e) {
         console.log(e);
         if (e.key == 81) {
@@ -75,8 +61,7 @@ window.onload = function () {
             PassArray[index] += 1;
             buttonx.innerHTML = buttonname + PassArray[index];
         }
-        
-    }
+    });
 
     pause=true;
     var minutesLabel = document.getElementById("minutes");
