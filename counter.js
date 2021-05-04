@@ -60,7 +60,7 @@ window.onload = function () {
     
     function KeyProcess(e) {
         //console.log(e);
-       for (i = 0; i < keysp.length; i++) {
+        for (i = 0; i < keysp.length; i++) {
             if (e.key == keysp[i][3]) {
                 elementname = keysp[i][0];
                 j = keysp[i][2];
@@ -70,24 +70,26 @@ window.onload = function () {
                 PassArray[j] = (PassArray[j] === undefined) ? 0 : PassArray[j];
                 PassArray[j] += 1;
                 buttonx.innerHTML = buttonname + PassArray[j];
-           }
+            }
+        }
             
-           if (e.code === 'Space') {
-               e.preventDefault();
-                if (pause) {
-                    playbutton.innerHTML = '<i class="fa fa-pause"></i>'
-                    pause = false;
-                    callPlayer("playVideo");
-                    playbutton.focus();
-                }
-                else {
-                    playbutton.innerHTML = '<i class="fa fa-play"></i>'
-                    pause = true;
-                    callPlayer("pauseVideo");
-                    playbutton.focus();
-                }                
-           }
-        }    
+        if (e.code === 'Space') {
+            if (pause) {
+                playbutton.innerHTML = '<i class="fa fa-pause"></i>'
+                pause = false;
+                callPlayer("playVideo");
+                playbutton.focus();
+                e.preventDefault();
+            }
+            else {
+                playbutton.innerHTML = '<i class="fa fa-play"></i>'
+                pause = true;
+                callPlayer("pauseVideo");
+                playbutton.focus();
+                e.preventDefault();
+            }                
+        }
+           
     }
              
     document.addEventListener('keyup', KeyProcess, false);
