@@ -39,6 +39,8 @@ window.onload = function () {
         ["defense-s", "Def 1/3<br>", 9, "g"]
     ];
 
+    pause = true;
+
     function ButtonProcess(elementname, buttonname, index, keypress) {
         var buttonx = document.getElementById(elementname);
         PassArray[index] = (PassArray[index] === undefined) ? 0 : PassArray[index];
@@ -69,7 +71,8 @@ window.onload = function () {
                 PassArray[j] += 1;
                 buttonx.innerHTML = buttonname + PassArray[j];
            }
-            else if (e.key == "x") {
+            
+           if (e.code === 'Space') {
                 if (pause) {
                     playbutton.innerHTML = '<i class="fa fa-pause"></i>'
                     pause = false;
@@ -86,7 +89,6 @@ window.onload = function () {
              
     document.addEventListener('keyup', KeyProcess, false);
 
-    pause=true;
     var minutesLabel = document.getElementById("minutes");
     var secondsLabel = document.getElementById("seconds");
     var totalSeconds = 0;
