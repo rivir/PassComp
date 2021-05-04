@@ -68,7 +68,19 @@ window.onload = function () {
                 PassArray[j] = (PassArray[j] === undefined) ? 0 : PassArray[j];
                 PassArray[j] += 1;
                 buttonx.innerHTML = buttonname + PassArray[j];
-            }
+           }
+            else if (e.key == " ") {
+                if (pause) {
+                    playbutton.innerHTML = '<i class="fa fa-pause"></i>'
+                    pause = false;
+                    callPlayer("playVideo");
+                }
+                else {
+                    playbutton.innerHTML = '<i class="fa fa-play"></i>'
+                    pause = true;
+                    callPlayer("pauseVideo");
+                }                
+           }
         }    
     }
              
