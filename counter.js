@@ -4,9 +4,9 @@
 
 window.onload = function () {
     PassArray = new Array();
-    ButtonProcess("offense-f", "Off 1/3<br>", 0, 65);
-    ButtonProcess("offtrans-f", "Trans<br>", 1);
-    ButtonProcess("middle-f", "Mid 1/3<br>", 2);
+    ButtonProcess("offense-f", "Off 1/3<br>", 0, 81);
+    ButtonProcess("offtrans-f", "Trans<br>", 1, 87);
+    ButtonProcess("middle-f", "Mid 1/3<br>", 2, 69);
     ButtonProcess("deftrans-f", "Trans<br>", 3);
     ButtonProcess("defense-f", "Def 1/3<br>", 4);
     ButtonProcess("offense-s", "Off 1/3<br>", 5);
@@ -41,7 +41,7 @@ window.onload = function () {
         };
 
         buttonx.addEventListener("keyup", function (event) {
-            if (event.key === keypress) {
+            if (event.which == keypress) {
                 //event.preventDefault();
                 buttonx.click();
             }
