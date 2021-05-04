@@ -4,7 +4,7 @@
 
 window.onload = function () {
     PassArray = new Array();
-    ButtonProcess("offense-f", "Off 1/3<br>", 0);
+    ButtonProcess("offense-f", "Off 1/3<br>", 0, 65);
     ButtonProcess("offtrans-f", "Trans<br>", 1);
     ButtonProcess("middle-f", "Mid 1/3<br>", 2);
     ButtonProcess("deftrans-f", "Trans<br>", 3);
@@ -26,7 +26,7 @@ window.onload = function () {
     ButtonProcess("1v1-f", "1v1-<br>", 19);
     ButtonProcess("1v1-s", "1v1+<br>", 20);
 
-    function ButtonProcess(elementname, buttonname, index) {
+    function ButtonProcess(elementname, buttonname, index, keypress) {
         var buttonx = document.getElementById(elementname);
         PassArray[index] = (PassArray[index] === undefined) ? 0 : PassArray[index];
 
@@ -39,6 +39,13 @@ window.onload = function () {
             buttonx.innerHTML = buttonname + PassArray[index];
             return false;
         };
+
+        buttonx.addEventListener("keyup", function (event) {
+            if (event.key === keypress) {
+                //event.preventDefault();
+                buttonx.click();
+            }
+        });
     }
 
     pause=true;
