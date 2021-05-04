@@ -4,16 +4,16 @@
 
 window.onload = function () {
     PassArray = new Array();
-    ButtonProcess("offense-f", "Off 1/3<br>", 0, "q");
-    ButtonProcess("offtrans-f", "Trans<br>", 1, "w");
-    ButtonProcess("middle-f", "Mid 1/3<br>", 2, "e");
-    ButtonProcess("deftrans-f", "Trans<br>", 3, "r");
-    ButtonProcess("defense-f", "Def 1/3<br>", 4, "t");
-    ButtonProcess("offense-s", "Off 1/3<br>", 5, "a");
-    ButtonProcess("offtrans-s", "Trans<br>", 6, "s");
-    ButtonProcess("middle-s", "Mid 1/3<br>", 7, "d");
-    ButtonProcess("deftrans-s", "Trans<br>", 8, "f");
-    ButtonProcess("defense-s", "Def 1/3<br>", 9, "g");
+    ButtonProcess("offense-f", "Off 1/3<br>", 0);
+    ButtonProcess("offtrans-f", "Trans<br>", 1);
+    ButtonProcess("middle-f", "Mid 1/3<br>", 2);
+    ButtonProcess("deftrans-f", "Trans<br>", 3);
+    ButtonProcess("defense-f", "Def 1/3<br>", 4);
+    ButtonProcess("offense-s", "Off 1/3<br>", 5);
+    ButtonProcess("offtrans-s", "Trans<br>", 6);
+    ButtonProcess("middle-s", "Mid 1/3<br>", 7);
+    ButtonProcess("deftrans-s", "Trans<br>", 8);
+    ButtonProcess("defense-s", "Def 1/3<br>", 9);
     ButtonProcess("throw-f", "Throws-<br>", 10);
     ButtonProcess("throw-s", "Throws+<br>", 11);
     ButtonProcess("reset", "Reset<br>", 12);
@@ -25,6 +25,19 @@ window.onload = function () {
     ButtonProcess("freekick", "free kicks<br>", 18);
     ButtonProcess("1v1-f", "1v1-<br>", 19);
     ButtonProcess("1v1-s", "1v1+<br>", 20);
+
+    var keysp = [
+        ["offense-f", "Off 1/3<br>", 0, "q"],
+        ["offtrans-f", "Trans<br>", 1, "w"],
+        ["middle-f", "Mid 1/3<br>", 2, "e"],
+        ["deftrans-f", "Trans<br>", 3, "r"],
+        ["defense-f", "Def 1/3<br>", 4, "t"],
+        ["offense-s", "Off 1/3<br>", 5, "a"],
+        ["offtrans-s", "Trans<br>", 6, "s"],
+        ["middle-s", "Mid 1/3<br>", 7, "d"],
+        ["deftrans-s", "Trans<br>", 8, "f"],
+        ["defense-s", "Def 1/3<br>", 9, "g"]
+    ];
 
     function ButtonProcess(elementname, buttonname, index, keypress) {
         var buttonx = document.getElementById(elementname);
@@ -40,15 +53,26 @@ window.onload = function () {
             buttonx.innerHTML = buttonname + PassArray[index];
             return false;
         };
+    }
 
-        document.addEventListener("keyup", function (e) {
-            console.log(e);
-            if (e.key == keypress) {
-                PassArray[index] += 1;
-                buttonx.innerHTML = buttonname + PassArray[index];
+    
+    function KeyProcess(e) {
+        //console.log(e);
+       for (i = 0; i < keysp.length; i++) {
+            if (e.key == keysp[i][3]) {
+                elementname = keysp[i][0];
+                j = keysp[i][2];
+                buttonname = keysp[i][1];
+
+                var buttonx = document.getElementById(elementname);
+                PassArray[j] = (PassArray[j] === undefined) ? 0 : PassArray[j];
+                PassArray[j] += 1;
+                buttonx.innerHTML = buttonname + PassArray[j];
             }
-        });
-    }    
+        }    
+    }
+             
+    document.addEventListener('keyup', KeyProcess, false);
 
     pause=true;
     var minutesLabel = document.getElementById("minutes");
