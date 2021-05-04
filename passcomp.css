@@ -128,12 +128,12 @@ button {
   font-family: "Font Awesome 5 Free"
 }
 
-i ::before {
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
+.fa-pause:before {
+    content: "\f04c";
+}
+
+.fa-save:before, .fa-floppy-o:before {
+    content: "\f0c7";
 }
 
 #seconds {
