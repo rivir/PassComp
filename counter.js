@@ -73,15 +73,18 @@ window.onload = function () {
            }
             
            if (e.code === 'Space') {
+               e.preventDefault();
                 if (pause) {
                     playbutton.innerHTML = '<i class="fa fa-pause"></i>'
                     pause = false;
                     callPlayer("playVideo");
+                    playbutton.focus();
                 }
                 else {
                     playbutton.innerHTML = '<i class="fa fa-play"></i>'
                     pause = true;
                     callPlayer("pauseVideo");
+                    playbutton.focus();
                 }                
            }
         }    
