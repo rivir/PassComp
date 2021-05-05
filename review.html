@@ -125,12 +125,11 @@ function onYouTubePlayerAPIReady() {
 function onStateChange(state) {
 	var _video_url = state.target.getVideoUrl();
 	var _video_id = _video_url.split('v=')[1];
-	var _current_index = i; 
     var _end_play_time = player.getCurrentTime();
 
 	var el = document.querySelector('#console-log');
     var newEl = document.createElement('p');
-    var log_context = 'current_index: '+_current_index+' video_id: '+_video_id+' end time: ' + _end_play_time
+    var log_context = 'current_index: '+ i +' video_id: '+_video_id+' end time: ' + _end_play_time
     
     //console.log(playlistarr[i][2])
     if (playlistarr[i][2]==0){
@@ -140,11 +139,11 @@ function onStateChange(state) {
     }
     //console.log(endSeconds)
 
-    if (state.data === YT.PlayerState.ENDED || _end_play_time >= endSecondsx) {
+    if (state.data === YT.PlayerState.ENDED && _end_play_time >= endSecondsx) {
         newEl.innerHTML = log_context+' state: ENDED'+' end-play-time:'+_end_play_time;
 		el.insertBefore(newEl, el.childNodes[0] || null)
         
-        console.log('State: ', _video_id, _current_index, 
+        console.log('State: ', _video_id, i, 
     				player.getCurrentTime(),  
                     playlistarr[i][1], 
                     endSecondsx, 
@@ -166,7 +165,7 @@ function onStateChange(state) {
   	newEl.innerHTML = log_context+' state: '+state.data;
 	el.insertBefore(newEl, el.childNodes[0] || null)
    
-	console.log('State: ', _video_id, _current_index, state );
+	console.log('State: ', _video_id, i, state );
   }
 }
 </script>
