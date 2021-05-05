@@ -165,7 +165,12 @@ function onStateChange(state) {
   	newEl.innerHTML = log_context+' state: '+state.data;
 	el.insertBefore(newEl, el.childNodes[0] || null)
    
-	console.log('State: ', _video_id, i, state );
+    console.log('State: ', _video_id, i, 
+            player.getCurrentTime(),  
+            playlistarr[i][1], 
+            endSecondsx, 
+            (endSecondsx - playlistarr[i][1]),
+            state );
   }
 }
 </script>
