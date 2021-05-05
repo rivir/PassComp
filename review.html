@@ -50,9 +50,9 @@ var player;
 
      //console.log(playlistarr[i][2])
     if (playlistarr[i][2]==0){
-        endSeconds = playlistarr[i][1] + 15;
+        endSecondsx = playlistarr[i][1] + 15;
     } else {
-        endSeconds = playlistarr[i][2];
+        endSecondsx = playlistarr[i][2];
     }
 
      //console.log(endSeconds)
@@ -64,13 +64,13 @@ var playerConfig = {
         playerVars: {
         autoplay: 1, // Auto-play the video on load
         controls: 1, // Show pause/play buttons in player
-        showinfo: 1, // Hide the video title
+        showinfo: 0, // Hide the video title
         modestbranding: 0, // Hide the Youtube Logo
         fs: 1, // Hide the full screen button
         cc_load_policy: 0, // Hide closed captions
         iv_load_policy: 3, // Hide the Video Annotations
         start: playlistarr[i][1],
-        end: endSeconds,
+        end: endSecondsx,
         autohide: 0, // Hide video controls when playing
     },
     events: {
@@ -97,13 +97,13 @@ function onStateChange(state) {
     
     //console.log(playlistarr[i][2])
     if (playlistarr[i][2]==0){
-        endSeconds = playlistarr[i][1] + 15;
+        endSecondsx = playlistarr[i][1] + 15;
     } else {
-        endSeconds = playlistarr[i][2];
+        endSecondsx = playlistarr[i][2];
     }
     //console.log(endSeconds)
 
-    if (state.data === YT.PlayerState.ENDED || _end_play_time >= endSeconds) {
+    if (state.data === YT.PlayerState.ENDED && _end_play_time >= endSeconds) {
 		
         newEl.innerHTML = log_context+' state: ENDED'+' end-play-time:'+_end_play_time;
 		el.insertBefore(newEl, el.childNodes[0] || null)
@@ -111,8 +111,8 @@ function onStateChange(state) {
         console.log('State: ', _video_id, _current_index, 
     				player.getCurrentTime(),  
                     playlistarr[i][1], 
-                    endSeconds, 
-                    (endSeconds - playlistarr[i][1]),
+                    endSecondsx, 
+                    (endSecondsx - playlistarr[i][1]),
                     state );
 
 		i++;
@@ -124,7 +124,7 @@ function onStateChange(state) {
         player.loadVideoById({
 			videoId: playlistarr[i][0],
 			startSeconds: playlistarr[i][1],
-			endSeconds: endSeconds
+			endSeconds: endSecondsx
         });
   }else{
   	newEl.innerHTML = log_context+' state: '+state.data;
