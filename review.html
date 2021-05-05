@@ -48,14 +48,14 @@ var playlistarr = [
 
 var player;
 
-console.log(playlistarr[i][2])
+     //console.log(playlistarr[i][2])
     if (playlistarr[i][2]==0){
         endSeconds = playlistarr[i][1] + 15;
     } else {
         endSeconds = playlistarr[i][2];
     }
 
-     console.log(endSeconds)
+     //console.log(endSeconds)
 
 var playerConfig = {
         width: '1522',
@@ -95,15 +95,15 @@ function onStateChange(state) {
     var newEl = document.createElement('p');
     var log_context = 'current_index: '+_current_index+' video_id: '+_video_id
     
-    console.log(playlistarr[i][2])
+    //console.log(playlistarr[i][2])
     if (playlistarr[i][2]==0){
         endSeconds = playlistarr[i][1] + 15;
     } else {
         endSeconds = playlistarr[i][2];
     }
-     console.log(endSeconds)
+    //console.log(endSeconds)
 
-    if (state.data === YT.PlayerState.ENDED && _end_play_time >= endSeconds) {
+    if (state.data === YT.PlayerState.ENDED || _end_play_time >= endSeconds) {
 		
         newEl.innerHTML = log_context+' state: ENDED'+' end-play-time:'+_end_play_time;
 		el.insertBefore(newEl, el.childNodes[0] || null)
