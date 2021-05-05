@@ -37,31 +37,41 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var i = 0;
-var videoId_arr = ['8onB7rPG4Pk', 'O57DyNMRGY8', 'aOtLCXM8Ox8', '-Yh2QGJBd2U'];
-var startSeconds_arr = [65,26,17, 41];
-var endSeconds_arr = [75,40,30, 60];
+var playlistarr = [
+        ["FwGN1njoN5w", 1507, 1567, "q"],
+        ["FwGN1njoN5w", 161, 0, "w"],
+        ["HONvlUxiz7E", 1020, 0, "w"],
+        ["FwGN1njoN5w", 812, 0, "w"],
+        ["6RG6vPRJ7tk", 2898, 0, "w"]
+    ];
 
 var player;
 
+    if (playlistarr[i][2]==0){
+        endSeconds = playlistarr[i][1] + 60;
+    } else {
+        endSeconds = playlistarr[i][2];
+    }
+
 var playerConfig = {
-    width: '1522',
-    height: '856',
-  videoId: videoId_arr[i],
-  playerVars: {
-    autoplay: 1, // Auto-play the video on load
-    controls: 1, // Show pause/play buttons in player
-    showinfo: 1, // Hide the video title
-    modestbranding: 0, // Hide the Youtube Logo
-    fs: 1, // Hide the full screen button
-    cc_load_policy: 0, // Hide closed captions
-    iv_load_policy: 3, // Hide the Video Annotations
-    start: startSeconds_arr[i],
-    end: endSeconds_arr[i],
-    autohide: 0, // Hide video controls when playing
-  },
-  events: {
-    'onStateChange': onStateChange
-  }
+        width: '1522',
+        height: '856',
+        videoId: playlistarr[i][0],
+        playerVars: {
+        autoplay: 1, // Auto-play the video on load
+        controls: 1, // Show pause/play buttons in player
+        showinfo: 1, // Hide the video title
+        modestbranding: 0, // Hide the Youtube Logo
+        fs: 1, // Hide the full screen button
+        cc_load_policy: 0, // Hide closed captions
+        iv_load_policy: 3, // Hide the Video Annotations
+        start: playlistarr[i][1],
+        end: endSeconds,
+        autohide: 0, // Hide video controls when playing
+    },
+    events: {
+        'onStateChange': onStateChange
+    }
 };
 
 
@@ -81,29 +91,34 @@ function onStateChange(state) {
     var newEl = document.createElement('p');
     var log_context = 'current_index: '+_current_index+' video_id: '+_video_id
     
+    if (playlistarr[i][2]==0){
+        endSeconds = playlistarr[i][1] + 60;
+    } else {
+        endSeconds = playlistarr[i][2];
+    }
   	
-    if (state.data === YT.PlayerState.ENDED && _end_play_time >= endSeconds_arr[i]) {
+    if (state.data === YT.PlayerState.ENDED && _end_play_time >= endSeconds) {
 		
         newEl.innerHTML = log_context+' state: ENDED'+' end-play-time:'+_end_play_time;
 		el.insertBefore(newEl, el.childNodes[0] || null)
         
         console.log('State: ', _video_id, _current_index, 
     				player.getCurrentTime(),  
-                    startSeconds_arr[i], 
-                    endSeconds_arr[i], 
-                    (endSeconds_arr[i] - startSeconds_arr[i]),
+                    playlistarr[i][1], 
+                    endSeconds, 
+                    (endSeconds - playlistarr[i][1]),
                     state );
 
 		i++;
-		if(typeof videoId_arr[i] === 'undefined'){
+		if(typeof playlistarr[i][0] === 'undefined'){
 			i = 0;
             return;
         }
         
         player.loadVideoById({
-			videoId: videoId_arr[i],
-			startSeconds: startSeconds_arr[i],
-			endSeconds: endSeconds_arr[i]
+			videoId: playlistarr[i][0],
+			startSeconds: playlistarr[i][1],
+			endSeconds: endSeconds
         });
   }else{
   	newEl.innerHTML = log_context+' state: '+state.data;
