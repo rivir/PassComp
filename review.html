@@ -155,7 +155,7 @@ function onStateChange(state) {
     } else {
         endSecondsx = playlistarr[i][2];
     }
-    var durationsec = 5000
+    var durationsec = 10000
     //console.log(endSeconds)
     var done = false;
     if (state.data == YT.PlayerState.PLAYING && !done) {
@@ -170,7 +170,7 @@ function onStateChange(state) {
         console.log('State: ', _video_id, i, player.getCurrentTime(), playlistarr[i][1], endSecondsx, (endSecondsx - playlistarr[i][1]), state );
 
 		if(playspeed == 0){
-            player.stopVideo();  
+            //player.stopVideo();  
             player.loadVideoById({
                 videoId: playlistarr[i][0],
                 startSeconds: playlistarr[i][1],
