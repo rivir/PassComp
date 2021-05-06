@@ -78,21 +78,16 @@ var playerConfig = {
 
 function onYouTubePlayerAPIReady() {
 	player = new YT.Player('ytplayer', playerConfig);
-    startInterval();
-}
-
-
-function startInterval() {
     checkInt = setInterval(continueVideo, 1000)
-    
+    //startInterval();
 }
-function continueVideo() {
-        //player.stopVideo();
-        //player.pauseVideo();
-        
-        //player.nextVideo();
-        //player.setPlaybackRate(0.5);
 
+
+//function startInterval() {
+    //checkInt = setInterval(continueVideo, 1000)
+    
+//}
+function continueVideo() {
         var _end_play_time = player.getCurrentTime();
         if (playlistarr[i][2]==0){
             endSecondsx = playlistarr[i][1] + 15;
@@ -122,23 +117,11 @@ function onStateChange(state) {
 	var _video_id = playlistarr[i][0];
     var _end_play_time = player.getCurrentTime();
 
-	//var el = document.querySelector('#console-log');
-    //var newEl = document.createElement('p');
-    //var log_context = 'current_index: '+ i +' video_id: '+_video_id+' end time: ' + _end_play_time
-    
-    //console.log(playlistarr[i][2])
     if (playlistarr[i][2]==0){
         endSecondsx = playlistarr[i][1] + 15;
     } else {
         endSecondsx = playlistarr[i][2];
     }
-    /*var durationsec = 10000
-    //console.log(endSeconds)
-    var done = false;
-    if (state.data == YT.PlayerState.PLAYING && !done) {
-            setTimeout(continueVideo, durationsec);
-            done = true;
-            }*/
 
     if (_end_play_time >= endSecondsx) {
         
