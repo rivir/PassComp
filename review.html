@@ -124,12 +124,16 @@ function startInterval() {
       };
    }, 100)
 }*/
-function stopVideo() {
+function continueVideo() {
         //player.stopVideo();
         //player.pauseVideo();
         player.playVideo();
         //player.nextVideo();
         //player.setPlaybackRate(0.5);
+      }
+
+function stopVideo() {
+        player.stopVideo();
       }
 
 function onStateChange(state) {
@@ -151,7 +155,7 @@ function onStateChange(state) {
     //console.log(endSeconds)
     var done = false;
     if (state.data == YT.PlayerState.PLAYING && !done) {
-            setTimeout(stopVideo, durationsec);
+            setTimeout(continueVideo, durationsec);
             done = true;
             }
 
@@ -169,6 +173,7 @@ function onStateChange(state) {
 		i++;
 		if(typeof playlistarr[i][0] === 'undefined'){
 			i = 0;
+            player.stopVideo();
             return;
         }
         
