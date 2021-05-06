@@ -84,14 +84,31 @@ function onYouTubePlayerAPIReady() {
 
 function startInterval() {
     checkInt = setInterval(continueVideo, 1000)
+    
 }
 function continueVideo() {
         //player.stopVideo();
-        player.pauseVideo();
-        player.playVideo();
+        //player.pauseVideo();
+        
         //player.nextVideo();
         //player.setPlaybackRate(0.5);
+
+        var _end_play_time = player.getCurrentTime();
+        if (playlistarr[i][2]==0){
+            endSecondsx = playlistarr[i][1] + 15;
+        } else {
+            endSecondsx = playlistarr[i][2];
+        }
+
+        if (_end_play_time >= endSecondsx) {
+            player.pauseVideo();
+        }
+        else {
+            player.playVideo();
+        }
       }
+
+
 
 function slowVideo() {
     player.setPlaybackRate(0.5);
