@@ -125,7 +125,10 @@ function startInterval() {
    }, 100)
 }*/
 function stopVideo() {
-        player.stopVideo();
+        //player.stopVideo();
+        player.pauseVideo();
+        player.nextVideo();
+        //player.setPlaybackRate(0.5);
       }
 
 function onStateChange(state) {
