@@ -132,29 +132,25 @@ function onStateChange(state) {
     } else {
         endSecondsx = playlistarr[i][2];
     }
-    var durationsec = 10000
+    /*var durationsec = 10000
     //console.log(endSeconds)
     var done = false;
     if (state.data == YT.PlayerState.PLAYING && !done) {
             setTimeout(continueVideo, durationsec);
             done = true;
-            }
+            }*/
 
     if (_end_play_time >= endSecondsx) {
-        //newEl.innerHTML = log_context+' state: ENDED'+' end-play-time:'+_end_play_time;
-		//el.insertBefore(newEl, el.childNodes[0] || null)
         
         console.log('State: ', _video_id, i, player.getCurrentTime(), playlistarr[i][1], endSecondsx, (endSecondsx - playlistarr[i][1]), state );
 
 		if(playspeed == 0){
-            //player.stopVideo();  
             player.loadVideoById({
                 videoId: playlistarr[i][0],
                 startSeconds: playlistarr[i][1],
                 endSeconds: endSecondsx,
             });
             player.setPlaybackRate(0.5);
-
             playspeed++;
         } else {   
             player.stopVideo();
