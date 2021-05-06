@@ -127,7 +127,7 @@ function startInterval() {
 function stopVideo() {
         player.stopVideo();
       }
-      
+
 function onStateChange(state) {
 	//var _video_url = state.target.getVideoUrl();
 	var _video_id = playlistarr[i][0];
@@ -143,7 +143,7 @@ function onStateChange(state) {
     } else {
         endSecondsx = playlistarr[i][2];
     }
-    var durationsec = endSecondsx - playlistarr[i][1]
+    var durationsec = (endSecondsx - playlistarr[i][1])*1000
     //console.log(endSeconds)
     var done = false;
     if (state.data == YT.PlayerState.PLAYING && !done) {
