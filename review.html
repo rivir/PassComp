@@ -164,6 +164,7 @@ function onStateChange(state) {
             if(playlistarr.length == i){
                 //i = 0;
                 player.stopVideo();
+                clearInterval(checkInt);
                 return;
             } else {
                 player.loadVideoById({
