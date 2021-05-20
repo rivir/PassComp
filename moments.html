@@ -110,10 +110,10 @@ function continueVideo() {
         }
 
         if (_end_play_time >= endSecondsx) {
-            player.pauseVideo();
+            if (pause) { player.pauseVideo(); }          
         }
         else {
-            player.playVideo();
+            if (pause) { player.playVideo(); }
         }
       }
 
