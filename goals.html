@@ -1,0 +1,227 @@
+<html> 
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="passcomp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');</style>
+
+  </head>
+
+<body>
+    <div class="__content">
+        <div class="__left">
+                <div class="__wrapper">
+                    <div id="ytplayer"></div>
+                    <div class="__timeline"><button id="play"><i class="fa fa-play"></i></button>
+                    <div class="Timeline" style="height: 48px;"><div id="console-log"></div></div></div>
+                </div>
+        </div>
+        <div class="__right">
+        </div>
+    </div>
+  </body>
+</html>
+
+
+
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+var pause = true;
+var i = 0;
+var playspeed = 0;
+var playlistarr = [
+        /*
+    GOALS
+        https://youtu.be/Riflyoegdp8?t=3304 FEB27
+        https://youtu.be/rnWELmUksVU?t=3956 MAR 14
+        https://youtu.be/1lNpSHAmW0I?t=4040 MAR 27 First game
+        https://youtu.be/FwGN1njoN5w?t=2506 MAR 28 2577
+        https://youtu.be/FwGN1njoN5w?t=4276 4306
+        https://youtu.be/qmiTOTRoSkk?t=329 MAR 27 SLAM 344
+        https://youtu.be/qmiTOTRoSkk?t=840  859
+
+        DOWN
+            https://youtu.be/RP34FDfBZOQ?t=1861  1879
+            https://youtu.be/RP34FDfBZOQ?t=2650 2664
+    
+    GOALS
+        https://youtu.be/RP34FDfBZOQ?t=2038  2053
+        https://youtu.be/RP34FDfBZOQ?t=2743  2759
+        https://youtu.be/HONvlUxiz7E?t=1028  1044
+                   
+            https://youtu.be/HONvlUxiz7E?t=1409  1417 DOWN
+        https://youtu.be/HONvlUxiz7E?t=1718 1742
+        https://youtu.be/HONvlUxiz7E?t=2379 2400
+        https://youtu.be/HONvlUxiz7E?t=3422 3435
+
+        https://youtu.be/6RG6vPRJ7tk?t=1102 1119  APR 26
+        https://youtu.be/6RG6vPRJ7tk?t=1687 1698
+        https://youtu.be/-uuBvzm01g0?t=2960  2981
+        https://youtu.be/TEZxXkpjSa4?t=3141  3167
+
+
+    
+
+
+    KEEPER SAVES
+        https://youtu.be/rnWELmUksVU?t=4003
+        https://youtu.be/FwGN1njoN5w?t=144
+        */
+        ["Riflyoegdp8",3304,0,      "FEB27"],
+        ["rnWELmUksVU",3956,0,      "MAR 14"],
+        ["1lNpSHAmW0I",4040,0,      "MAR 27 First game"],
+        ["FwGN1njoN5w",2506,2577,   "MAR 28"],
+        ["FwGN1njoN5w",4276,4306,   ""],
+        ["qmiTOTRoSkk",329,344,     "MAR 27 SLAM"],
+        ["qmiTOTRoSkk",840,859,     ""],
+         ["RP34FDfBZOQ",1861,1879,  "DOWN"],
+         ["RP34FDfBZOQ",2650,2664,  "DOWN"],
+        ["RP34FDfBZOQ",2038,2053,   ""],
+        ["RP34FDfBZOQ",2743,2759,   ""],
+        ["HONvlUxiz7E",1028,1044,   ""],       
+          ["HONvlUxiz7E",1409,1417, "DOWN"],
+        ["HONvlUxiz7E",1718,1742,   ""],
+        ["HONvlUxiz7E",2379,2400,   ""],
+        ["HONvlUxiz7E",3422,3435,   ""],
+        ["6RG6vPRJ7tk",1102,1119,   "APR 26"],
+        ["6RG6vPRJ7tk",1687,1698,   ""],
+        ["-uuBvzm01g0",2960,2981,   ""],
+        ["TEZxXkpjSa4",3141,3167,   ""]
+    ];
+
+    if (playlistarr[i][2]==0){
+        endSecondsx = playlistarr[i][1] + 15;
+    } else {
+        endSecondsx = playlistarr[i][2];
+    }
+
+var playerConfig = {
+        width: '1522',
+        height: '856',
+        videoId: playlistarr[i][0],
+        playerVars: {
+            enablejsapi: 1,
+            autoplay: 1, // Auto-play the video on load
+            controls: 1, // Show pause/play buttons in player
+            showinfo: 0, // Hide the video title
+            modestbranding: 0, // Hide the Youtube Logo
+            rel: 0,
+            fs: 1, // Hide the full screen button
+            cc_load_policy: 0, // Hide closed captions
+            iv_load_policy: 3, // Hide the Video Annotations
+            start: playlistarr[i][1],
+            end: endSecondsx,
+            autohide: 0, // Hide video controls when playing
+        },
+        events: {
+            'onStateChange': onStateChange
+        }
+};
+
+function onYouTubePlayerAPIReady() {
+	player = new YT.Player('ytplayer', playerConfig);
+    checkInt = setInterval(continueVideo, 1000)
+    //startInterval();
+}
+
+/*function pauseVideo() {
+        if (_end_play_time >= endSecondsx) {
+            
+        }
+        else {
+            player.playVideo();
+        }
+}*/
+
+var playbutton = document.getElementById("play");
+    document.getElementById('play').addEventListener("click", function () {
+        if (pause) {
+            playbutton.innerHTML = '<i class="fa fa-pause"></i>'
+            pause = false;
+            player.playVideo();
+        }
+        else {
+            playbutton.innerHTML = '<i class="fa fa-play"></i>'
+            pause = true;
+            player.pauseVideo();
+        }
+    });
+    
+function continueVideo() {
+        var _end_play_time = player.getCurrentTime();
+        if (playlistarr[i][2]==0){
+            endSecondsx = playlistarr[i][1] + 15;
+        } else {
+            endSecondsx = playlistarr[i][2];
+        }
+
+        if (_end_play_time >= endSecondsx) {
+            if (!pause) { player.pauseVideo(); }          
+        }
+        else {
+            if (!pause) { player.playVideo(); }
+        }
+      }
+
+
+
+function slowVideo() {
+    player.setPlaybackRate(0.5);
+      }
+
+function stopVideo() {
+        player.stopVideo();
+      }
+
+function onStateChange(state) {
+	var _video_id = playlistarr[i][0];
+    var _end_play_time = player.getCurrentTime();
+
+    if (playlistarr[i][2]==0){
+        endSecondsx = playlistarr[i][1] + 15;
+    } else {
+        endSecondsx = playlistarr[i][2];
+    }
+
+    if (_end_play_time >= endSecondsx) {
+        
+        console.log('State: ', _video_id, i, player.getCurrentTime(), playlistarr[i][1], endSecondsx, (endSecondsx - playlistarr[i][1]), state );
+
+		if(playspeed == 0){
+            player.loadVideoById({
+                videoId: playlistarr[i][0],
+                startSeconds: playlistarr[i][1],
+                endSeconds: endSecondsx,
+            });
+            player.setPlaybackRate(0.5);
+            playspeed++;
+        } else {   
+            player.stopVideo();
+            i++;
+            playspeed=0;     
+
+            if(playlistarr.length == i){
+                //i = 0;
+                player.stopVideo();
+                clearInterval(checkInt);
+                return;
+            } else {
+                player.loadVideoById({
+                    videoId: playlistarr[i][0],
+                    startSeconds: playlistarr[i][1],
+                    endSeconds: endSecondsx,
+                });
+                player.setPlaybackRate(1.0);
+            }
+        }
+  }else{
+    console.log('State: ', _video_id, i, player.getCurrentTime(), playlistarr[i][1], endSecondsx, (endSecondsx - playlistarr[i][1]), state );
+  }
+}
+</script>
