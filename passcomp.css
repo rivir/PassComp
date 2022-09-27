@@ -89,7 +89,6 @@ position: relative;
 }
 
 .__right {
-    width: 450px;
     overflow-x: hidden;
     overflow-y: auto;
     display: flex;
